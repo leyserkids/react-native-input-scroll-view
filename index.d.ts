@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ScrollViewProperties, TextStyle, ScrollView } from 'react-native';
+import { ScrollViewProperties, TextStyle, ScrollView, NativeSyntheticEvent, TextInputSelectionChangeEventData } from 'react-native';
 
 export interface InputScrollViewProps extends ScrollViewProperties {
   readonly topOffset?: number;
@@ -8,6 +8,7 @@ export interface InputScrollViewProps extends ScrollViewProperties {
   readonly useAnimatedScrollView?: boolean;
   readonly supportHardwareKeyboard?: boolean;
   readonly keyboardAvoidingViewProps?: object;
+  readonly extOnSelectionChange?: (event: NativeSyntheticEvent<TextInputSelectionChangeEventData>) => void;
 }
 
 declare class InputScrollView extends React.Component<InputScrollViewProps> {
